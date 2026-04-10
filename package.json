@@ -1,0 +1,29 @@
+{
+  "name": "p2p-price-oracle",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Decentralized crypto price aggregation/oracle-like service using Hyperswarm DHT + @hyperswarm/rpc.",
+  "scripts": {
+    "dev:peer": "tsx src/peer/main.ts",
+    "dev:client": "tsx src/client/main.ts",
+    "build": "tsc -p tsconfig.json",
+    "start:peer": "node dist/peer/main.js",
+    "start:client": "node dist/client/main.js",
+    "lint": "eslint .",
+    "format": "prettier -w .",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@hyperswarm/rpc": "^3.4.1",
+    "hyperswarm": "^4.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}
+
