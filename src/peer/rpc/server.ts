@@ -9,10 +9,11 @@ export async function startRpcServer() {
     // RPC topics we got: getPrice, getPrices, getCapabilities, ping
     const server = rpc.createServer()
 
-    server.respond('getPrice', getPriceHandler)
-    server.respond('ping', pingHandler)
-
     await server.listen()
+    const peerPubkeyHex = Buffer.from(server.publicKey).toString('hex')
+
+    server.respond('getPrice', (reqRaw: string) => getPriceHandler(reqRaw, peerPubkeyHex))
+    server.respond('ping', pingHandler)
 
     return {
         rpc,
