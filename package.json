@@ -5,11 +5,11 @@
   "type": "module",
   "description": "Decentralized crypto price aggregation/oracle-like service using Hyperswarm DHT + @hyperswarm/rpc.",
   "scripts": {
-    "dev:peer": "tsx src/peer/main.ts",
-    "dev:client": "tsx src/client/main.ts",
+    "dev:peer": "bun run src/peer/main.ts",
+    "dev:client": "bun run src/client/main.ts",
     "build": "tsc -p tsconfig.json",
-    "start:peer": "node dist/peer/main.js",
-    "start:client": "node dist/client/main.js",
+    "start:peer": "bun dist/peer/main.js",
+    "start:client": "bun dist/client/main.js",
     "lint": "eslint .",
     "format": "prettier -w .",
     "typecheck": "tsc -p tsconfig.json --noEmit"
